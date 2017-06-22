@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "portfolio">
 <head>
 	<title>Alexey Mosko front-end developer portfolio</title>
 	<!-- inject:less -->
@@ -10,6 +10,11 @@
 	<!-- endinject -->
 </head>
 <body>
+<div class = "page">
+	<div ui-view> </div>
+
+</div>
+
 <!-- inject:vendor:js -->
 <script src="vendor/less.min.js"></script>
 <script src="vendor/angular.min.js"></script>
@@ -17,8 +22,8 @@
 <!-- endinject -->
 <!-- inject:app:js -->
 <script src="app/app.js"></script>
-<script src="app/shared/navbar/navbarDirective.js"></script>
-<script src="app/templates.js"></script>
+<!---<script src="app/shared/navbar/navbarDirective.js"></script>
+<script src="app/templates.js"></script>--->
 <!-- endinject -->
 </body>
 </html>

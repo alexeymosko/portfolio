@@ -77,7 +77,7 @@ gulp.task('dev-angular', function(){
 });
 
 gulp.task('dev-angular-html', function(){
-	return gulp.src('./app/**/*Template.html')
+	return gulp.src('./app/**/*.html')
 	.pipe(gulp.dest(devPath + '/app'));
 });
 
@@ -87,7 +87,7 @@ gulp.task('dev-watch', function(){
             baseDir: devPath
         }
     });
-	gulp.watch(['./app/**/*Template.html'], ['dev-templates-cache', 'dev-angular-html']);
+	gulp.watch(['./app/**/*.html'], ['dev-templates-cache', 'dev-angular-html']);
 	gulp.watch(['sources/less/*.less', 'app/components/**/*.less', 'app/shared/**/*.less'], ['dev-less']);
 	gulp.watch(['./app/**/*.js'], ['dev-angular']);
 });	
