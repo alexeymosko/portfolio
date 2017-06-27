@@ -10,6 +10,7 @@ var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 var runSequence = require('run-sequence');
 
+var iife = require('gulp-iife');
 
 var devPath = './dev/';
 
@@ -59,7 +60,7 @@ gulp.task('dev-vendor', function(){
 
 gulp.task('dev-images', function(){
 	return gulp.src('sources/images/*.{jpg,png,svg}')
-    .pipe(imagemin())
+  //  .pipe(imagemin())
     .pipe(gulp.dest(devPath + '/images'))
 });
 
@@ -73,6 +74,7 @@ gulp.task('dev-templates-cache', function () {
     
 gulp.task('dev-angular', function(){
 	return gulp.src('./app/**/*.js')
+  .pipe(iife())
 	.pipe(gulp.dest(devPath + '/app'));
 });
 
@@ -97,7 +99,7 @@ gulp.task('dev-clean', function() {
         .pipe(clean());
 });
 gulp.task('default', function(){
-	runSequence("dev-clean", "dev-index", "dev-angular-html", "dev-watch");
+	runSequence("dev-clean", "dev-index", "dev-angular-html", "dev-images", "dev-watch");
 });
 
 

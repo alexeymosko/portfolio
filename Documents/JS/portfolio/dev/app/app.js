@@ -1,4 +1,7 @@
-var app = angular.module('portfolio', ['ui-router']);
+;(function() {
+"use strict";
+
+var app = angular.module('portfolio', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) { 
 	$urlRouterProvider.otherwise('/');
@@ -9,3 +12,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			template: 'Hello World!'
 		});
 });
+}());

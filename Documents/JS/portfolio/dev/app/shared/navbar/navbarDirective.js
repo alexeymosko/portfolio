@@ -1,6 +1,11 @@
-angular.module('portfolio').directive('navbar', function(){
-	return {
-		restrict: 'E',
-		templateUrl: './app/templates/navbar/navbarTemplate.html'
-	}
-});
+;(function() {
+"use strict";
+
+var app = angular.module('portfolio');
+  app.directive('navbar', function(){
+  	return {
+  		restrict: 'E',
+  		templateUrl: './app/shared/navbar/navbarTemplate.html'
+  	}
+  });
+}());

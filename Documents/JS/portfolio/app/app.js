@@ -1,4 +1,4 @@
-var app = angular.module('portfolio', ['ui-router']);
+var app = angular.module('portfolio', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) { 
 	$urlRouterProvider.otherwise('/');
