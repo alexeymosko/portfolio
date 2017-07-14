@@ -1,0 +1,77 @@
+@import "mixins.less";
+
+.skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-top: 50px;
+
+}
+
+.skills-item {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+
+
+.skills-item__headline {
+	display: flex;
+	align-items: center;
+	margin: 5px;
+	text-align: center;
+	width: 100%;
+	.titlefont(18px);
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	&::before {
+		content: "";
+		height: 1px;
+		width: 100%;
+		background-color: #343434;
+		flex-grow: 1;
+		display: block;
+	}
+	&::after {
+		content: "";
+		height: 1px;
+		width: 100%;
+		background-color: #343434;
+		flex-grow: 1;
+		display: block;
+	}
+	span {
+		flex-shrink: 0;
+	}
+}
+
+.skills-item__img {
+	width: 100px;
+  	height: 100px;
+  	margin-bottom: 10px;
+  	&:hover {
+  		animation: flip 2s ease-in-out 0s infinite;
+  	}
+}
+
+.skills-item__img--start {
+	transform: rotateY(90deg);
+	animation: halfflip 1s ease-in-out 2s forwards;
+}
+
+@keyframes halfflip {
+    from {transform: rotateY(90deg);}
+    to {transform: rotateY(0deg);}
+}
+@keyframes flip {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
+
+.skills-item__description {
+	.basefont;
+}

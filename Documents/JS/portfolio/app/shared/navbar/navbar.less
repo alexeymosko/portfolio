@@ -1,29 +1,19 @@
 @import "mixins.less";
 
+
 .nav {
 	position: fixed;
-	max-width: 100%;
+	background-color: #fff;
+	z-index: 5;
+	top: 0;
+	width: ~'calc(100% - 80px)';
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 5px 40px;
 }
-
-.nav-home {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.nav-home-text {
-	margin-left: 10px;
-}
-
-.nav-home-text__name {
-	.titlefont;
-}
-
-.nav-home-text__description  {
-	.titlefont(16px);
+.nav--home {
+	justify-content: flex-end;
 }
 
 .top-menu {
@@ -61,4 +51,10 @@
 	.titlefont(16px);
 	text-transform: uppercase;
 	text-decoration: none;
+}
+
+@media(max-width: 700px) {
+	.nav--home {
+	justify-content: center;
+}
 }

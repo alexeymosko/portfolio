@@ -9,6 +9,9 @@ var templateCache = require('gulp-angular-templatecache');
 var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 var runSequence = require('run-sequence');
+var spritesmith = require('gulp.spritesmith');
+var buffer = require('vinyl-buffer');
+var merge = require('merge-stream');
 
 var iife = require('gulp-iife');
 
@@ -16,7 +19,7 @@ var devPath = './dev/';
 
 
 
-gulp.task('dev-less', function () {
+gulp.task('dev-less', ['dev-sprite'], function () {
   return gulp.src(['sources/less/*.less', 'app/components/**/*.less', 'app/shared/**/*.less'])
   //	.pipe(concat('all.less'))
   	.pipe(rename({dirname: ''}))
@@ -53,7 +56,7 @@ gulp.task('dev-index', ['dev-less', 'dev-vendor', 'dev-templates-cache', 'dev-an
 });
 
 gulp.task('dev-vendor', function(){
-	return gulp.src('./bower_components/**/*.min.js')
+	return gulp.src(['./bower_components/**/*.min.js', './sources/js/*.js'])
 	.pipe(rename({dirname: ''}))
 	.pipe(gulp.dest(devPath + 'vendor'))
 });
@@ -97,6 +100,28 @@ gulp.task('dev-watch', function(){
 gulp.task('dev-clean', function() {
     return gulp.src(devPath, {read: false})
         .pipe(clean());
+});
+gulp.task('dev-sprite', function () {
+  // Generate our spritesheet 
+  var spriteData = gulp.src('sources/sprite/*.jpg').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: '_sprite.less',
+    imgPath: '../images/sprite.png'
+  }));
+ 
+  // Pipe image stream through image optimizer and onto disk 
+  var imgStream = spriteData.img
+    // DEV: We must buffer our stream into a Buffer for `imagemin` 
+    .pipe(buffer())
+   // .pipe(imagemin())
+    .pipe(gulp.dest(devPath + '/images'));
+ 
+  // Pipe CSS stream through CSS optimizer and onto disk 
+  var cssStream = spriteData.css
+    .pipe(gulp.dest('sources/less'));
+ 
+  // Return a merged stream to handle both `end` events 
+  return merge(imgStream, cssStream);
 });
 gulp.task('default', function(){
 	runSequence("dev-clean", "dev-index", "dev-angular-html", "dev-images", "dev-watch");

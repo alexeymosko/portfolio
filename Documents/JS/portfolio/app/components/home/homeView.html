@@ -1,1 +1,19 @@
-<p>Hello world!</p>
+<div class = "homepage" ng-controller = "homeController as home">
+	<div class = "homepage-logo-wrapper">
+		<logo></logo>
+	</div>
+	<div class = "homepage-line" ng-class = "{'homepage-line--visible':home.showLine}">
+	</div>
+	<div class = "homepage-intro">
+		<p class = "homepage-intro__text">
+		Hey there, I'm a front-end developer based in Moscow, Russia. I build websites and user interfaces using HTML/CSS/Javascript/Angular JS. 
+		</p>
+		<p class = "homepage-intro__text">I come from media background, being previously involved in writing and
+		editing/data mining/content management/creating interactive multimedia
+		graphics/video production and editing.
+		</p>
+		<p class = "homepage-intro__text">My motto is 'Never stop learning'. I love
+		creating beautiful yet functional things that produce real value.
+		</p>
+	</div>
+</div>

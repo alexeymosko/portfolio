@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "portfolio">
 <head>
 	<title>Alexey Mosko front-end developer portfolio</title>
 	<!-- inject:less -->
 	<!-- endinject -->
 </head>
-<body ng-app = "portfolio">
-<div class = "page">
+<body>
 	<navbar></navbar>
-	<div ui-view> </div>
-
-</div>
-
-<!-- inject:vendor:js -->
-<!-- endinject -->
-<!-- inject:app:js -->
-<!-- endinject -->
+	<div ui-view> 
+	</div>
+	<footer-block></footer-block>
+	<!-- inject:vendor:js -->
+	<!-- endinject -->
+	<!-- inject:app:js -->
+	<!-- endinject -->
 </body>
 </html>

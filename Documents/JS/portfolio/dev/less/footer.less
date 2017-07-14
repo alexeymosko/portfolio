@@ -1,0 +1,30 @@
+@import "_sprite.less";
+.footer {
+	background-color: #fff;
+	margin-top: 100px;
+}
+
+.footer-container {
+	max-width: 100%;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-icons__link {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	&--email {
+	    .sprite(@mail-s)
+	  }
+	&--facebook {
+	    .sprite(@facebook-s)
+	  }
+	&--github {
+	    .sprite(@github-s)
+	  }
+}

@@ -1,0 +1,58 @@
+@import "mixins.less";
+
+.nav-home {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.nav-home-text__name {
+	.titlefont;
+}
+
+.nav-home-text__description  {
+	.titlefont(16px);
+}
+
+
+.logo {
+    max-width: 120px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.logo__circle {
+  stroke: #858585;
+  stroke-width: 0;
+  fill: none;
+  stroke-dasharray: 70;
+  stroke-dashoffset: 0;
+}
+
+.logo:hover .logo__circle {
+	stroke-width: 2;
+	animation: anim 5s linear 0s infinite;
+}
+
+@keyframes anim  {
+  0% { 
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  25% { 
+    stroke-dashoffset: 40;
+    opacity: .8;
+  }
+  50% { 
+    stroke-dashoffset: 80;
+    opacity: .6;
+  }
+  75% { 
+    stroke-dashoffset: 120;
+    opacity: .8;
+  }
+  100% { 
+    stroke-dashoffset: 140;
+    opacity: 1;
+  }
+}
