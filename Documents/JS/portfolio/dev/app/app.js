@@ -21,5 +21,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			url: '/projects',
 			templateUrl: 'app/components/projects/projectsView.html'
 		})
+		.state('contact', {
+			url: '/contact',
+			templateUrl: 'app/components/contact/contactView.html'
+		})
 });
+app.run(
+    ['$rootScope', '$timeout',
+        function($rootScope, $timeout) {
+            $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+                $rootScope.preloader = true;
+            })
+            $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+                $timeout(function(){
+                	$rootScope.preloader = false;
+                }, 1200)
+            })
+        }
+    ])
 }());

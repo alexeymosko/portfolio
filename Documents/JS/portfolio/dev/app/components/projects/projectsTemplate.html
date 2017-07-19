@@ -1,11 +1,19 @@
-<div class = "content-container">
-	<div class = "projects-header">
-		<img class = "projects-header__img">
-		<div class = "projects-header__text"
-		<div class = "projects-header__line">
+<div class = "content-container" viewport = "window">
+	<div class = "projects-header" viewport-enter= "projectsCtrl.header.inViewport = true" viewport-leave= "projectsCtrl.header.inViewport = false">
+		<div class = "projects-header__img-wrapper" ng-class = "{'projects-header__img-wrapper--start': projectsCtrl.header.inViewport === true}">
+		<img class = "projects-header__img" ng-src = "{{projectsCtrl.header.pic}}" alt = "projects">
+		</div>
+		<div class = "projects-header__text">{{projectsCtrl.header.text}}</div>
+		<div class = "projects-header-line" ng-class = "{'projects-header-line--visible':projectsCtrl.showLine}">
 	</div>
 	<div class = "projects-list">
-		<div class = "projects-list__item" ng-repeat = "item in projectsCtrl.items"></div>
+		<div class = "projects-list-item" ng-repeat = "item in projectsCtrl.items">
+			<h2 class = "projects-list-item-headline">{{item.headline}}</h2>
+			<div class = "projects-list-item-body">
+			<img class = "projects-list-item_pic" ng-src = "{{item.pic}}">	
+			<p class = "projects-list-item-description">{{item.description}}</p>
+			</div>
+		</div>
 	</div>
 	
 </div>

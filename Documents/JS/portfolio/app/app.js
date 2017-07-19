@@ -18,4 +18,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			url: '/projects',
 			templateUrl: 'app/components/projects/projectsView.html'
 		})
+		.state('contact', {
+			url: '/contact',
+			templateUrl: 'app/components/contact/contactView.html'
+		})
 });
+app.run(
+    ['$rootScope', '$timeout', '$transitions',
+        function($rootScope, $timeout, $transitions) {
+        	$transitions.onStart({ }, function(trans) {
+        		$rootScope.preloader = true; 
+				trans.promise.finally(function() {
+					$timeout(function(){
+                	$rootScope.preloader = false;
+                }, 1200)
+				});
+  			});
+        }
+    ])

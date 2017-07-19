@@ -2,7 +2,9 @@
 	<div class = "skills-list" viewport = "window" >
 			<div class = "skills-item"  viewport-enter="item.inViewport = true" viewport-leave= "item.inViewport = false"
 ng-repeat="item in skillsCtrl.items track by $index">
-				<img class = "skills-item__img"  ng-src = "{{item.image}}" ng-class = "{'skills-item__img--start': item.inViewport === true}">
+				<div class= "skills-item__img-wrapper" ng-class = "{'skills-item__img-wrapper--start': item.inViewport === true}">
+				<img class = "skills-item__img"  ng-src = "{{item.image}}" >
+				</div>
 				<h2 class = "skills-item__headline"><span>{{item.headline}}</span></h2>
 				<div class = "skills-item__description" ng-bind-html = "item.description"></div>
 			</div>

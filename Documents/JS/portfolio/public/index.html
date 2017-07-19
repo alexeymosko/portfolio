@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app = "portfolio">
+<head>
+	<title>Alexey Mosko front-end developer portfolio</title>
+	<!-- inject:less -->
+	<!-- endinject -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="css/build.css">
+	<!-- endinject -->
+</head>
+<body>
+	<loader ng-show="preloader">Loading...</loader>
+	<navbar></navbar>
+	<div ui-view class = "main"> 
+	</div>
+	<footer-block></footer-block>
+	<!-- inject:vendor:js -->
+	<script src="vendor/vendor.js"></script>
+	<!-- endinject -->
+	<!-- inject:app:js -->
+	<script src="app/build.js"></script>
+	<!-- endinject -->
+</body>
+</html>

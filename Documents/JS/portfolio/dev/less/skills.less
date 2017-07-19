@@ -55,13 +55,17 @@
   	margin-bottom: 10px;
   	&:hover {
   		animation: flip 2s ease-in-out 0s infinite;
+  		cursor: pointer;
   	}
+  	transition: transform 1s;
+
 }
 
-.skills-item__img--start {
+.skills-item__img-wrapper--start {
 	transform: rotateY(90deg);
-	animation: halfflip 1s ease-in-out 2s forwards;
+	animation: halfflip 2s ease-in-out 1s forwards;
 }
+
 
 @keyframes halfflip {
     from {transform: rotateY(90deg);}
@@ -74,4 +78,14 @@
 
 .skills-item__description {
 	.basefont;
+}
+
+@media (max-width: 620px) {
+	.skills-list {
+	flex-direction: column;
+	align-items: center;
+	}
+	.skills-item {
+	width: 90%;
+	}
 }

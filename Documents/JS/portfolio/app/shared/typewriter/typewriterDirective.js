@@ -7,7 +7,6 @@
   		link: function(scope, element){
   			var target = element[0].querySelector('.tw-title');
   			var typeMashine = typewriter(target, 'fast');
-  			console.log(scope.typetext);
   			typeMashine.dealWithIt(JSON.parse(scope.typetext));
   		}
   	}

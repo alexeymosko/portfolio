@@ -1,0 +1,58 @@
+@import "mixins.less";
+@import "_sprite.less";
+
+.contact-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+	margin: 50px 0px;
+}
+
+
+.about-pic {
+	display: block;
+	width: 45%;
+	margin-right: 30px;
+}
+
+.about-content {
+	width: 45%;
+	.basefont;
+}
+
+.about-icons__link {
+	display: inline-block;
+	&--email {
+	    .sprite(@mail);
+	  }
+	&--facebook {
+	    .sprite(@facebook);
+	  }
+	&--github {
+	    .sprite(@github);
+	  }
+}
+
+.about-text {
+	margin-bottom: 30px;
+}
+
+@media (max-width: 530px) {
+	.contact-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.about-pic {
+		width: 90%;
+		margin-bottom: 20px;
+		margin-right: 0px;
+	}
+	.about-content {
+	width: 90%;
+	}
+	.about-icons {
+		text-align: center;
+	}
+}
+
+

@@ -1,9 +1,14 @@
 @import "mixins.less";
+@import "animations.less";
 
 .nav-home {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+}
+
+.nav-home-text {
+  flex-shrink: 0;
 }
 
 .nav-home-text__name {
@@ -19,6 +24,7 @@
     max-width: 120px;
     height: 100px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .logo__circle {
@@ -34,25 +40,4 @@
 	animation: anim 5s linear 0s infinite;
 }
 
-@keyframes anim  {
-  0% { 
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  25% { 
-    stroke-dashoffset: 40;
-    opacity: .8;
-  }
-  50% { 
-    stroke-dashoffset: 80;
-    opacity: .6;
-  }
-  75% { 
-    stroke-dashoffset: 120;
-    opacity: .8;
-  }
-  100% { 
-    stroke-dashoffset: 140;
-    opacity: 1;
-  }
-}
+

@@ -1,5 +1,5 @@
 @import "mixins.less";
-
+@import "animations.less";
 
 .nav {
 	position: fixed;
@@ -20,8 +20,6 @@
 	display: flex;
 	align-items: center;
 	list-style: none;
-	
-
 }
 .top-menu__item {	
 	position: relative;
@@ -56,5 +54,24 @@
 @media(max-width: 700px) {
 	.nav--home {
 	justify-content: center;
+	}
+	.nav-home-text {
+		display: none;
+	}
 }
+
+@media(max-width: 575px)  {
+	.nav {
+		flex-direction: column;
+		align-items: center;
+	}
+	.top-menu {
+	flex-wrap: wrap;
+	justify-content: center;
+	-webkit-padding-start: 0px;
+	padding-left: 0px;
+	}
+	.top-menu__item {
+		margin-bottom: 10px;
+	}
 }
