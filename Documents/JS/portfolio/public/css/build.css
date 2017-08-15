@@ -143,10 +143,22 @@ body {
 .content-container {
   max-width: 100%;
   width: 1000px;
-  min-height: 100vh;
+  min-height: 690px;
   background-color: #ffffff;
   margin-left: auto;
   margin-right: auto;
+}
+@font-face {
+  font-family: 'ambleregular';
+  src: url('../fonts/Amble-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'amblebold';
+  src: url('Amble-Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 .about-container {
   max-width: 100%;
@@ -167,8 +179,8 @@ body {
 }
 .about-intro-text {
   width: 70%;
-  font-family: Pragmatica sans-serif;
-  font-weight: 300;
+  font-family: ambleregular sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
   font-style: italic;
@@ -194,8 +206,8 @@ body {
 }
 .about-main-text {
   width: 45%;
-  font-family: Pragmatica sans-serif;
-  font-weight: 300;
+  font-family: ambleregular sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
 }
@@ -287,8 +299,8 @@ This must be run when you have at least 2 sprites.
 }
 .about-content {
   width: 45%;
-  font-family: Pragmatica sans-serif;
-  font-weight: 300;
+  font-family: ambleregular sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
 }
@@ -383,8 +395,8 @@ This must be run when you have at least 2 sprites.
   transition: transform 1.2s ease-in-out 0s, -webkit-transform 1.2s ease-in-out 0s;
 }
 .homepage-intro__text {
-  font-family: Pragmatica sans-serif;
-  font-weight: 300;
+  font-family: ambleregular sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
   text-align: justify;
@@ -469,8 +481,8 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 20px;
   width: 600px;
   max-width: 90%;
-  font-family: Pragmatica sans-serif;
-  font-weight: 300;
+  font-family: ambleregular sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
   font-style: italic;
@@ -499,8 +511,8 @@ This must be run when you have at least 2 sprites.
 }
 .projects-list-item-headline {
   margin-left: 20px;
-  font-family: Droid Sans sans-serif;
-  font-weight: 400;
+  font-family: amblebold sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
   text-transform: uppercase;
@@ -515,16 +527,21 @@ This must be run when you have at least 2 sprites.
   -ms-flex-align: center;
   align-items: center;
 }
-.projects-list-item_pic {
-  width: 45%;
+.projects-list-item-link {
+  display: block;
+  width: 30%;
 }
-.projects-list-item_pic:nth-of-type(1) {
+.projects-list-item-pic {
+  display: block;
+  width: 100%;
+}
+.projects-list-item-pic:nth-of-type(1) {
   border: 1px solid #343434;
 }
 .projects-list-item-description {
   width: 45%;
-  font-family: Pragmatica sans-serif;
-  font-weight: 300;
+  font-family: ambleregular sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
   margin-top: 0px;
@@ -540,7 +557,7 @@ This must be run when you have at least 2 sprites.
     -ms-flex-align: center;
     align-items: center;
   }
-  .projects-list-item_pic {
+  .projects-list-item-link {
     width: 60%;
     margin-bottom: 10px;
   }
@@ -587,8 +604,8 @@ This must be run when you have at least 2 sprites.
   margin: 5px;
   text-align: center;
   width: 100%;
-  font-family: Droid Sans sans-serif;
-  font-weight: 400;
+  font-family: amblebold sans-serif;
+  font-weight: normal;
   font-size: 18px;
   color: #343434;
   text-transform: uppercase;
@@ -639,8 +656,8 @@ This must be run when you have at least 2 sprites.
   animation: halfflip 2s ease-in-out 1s forwards;
 }
 .skills-item__description {
-  font-family: Pragmatica sans-serif;
-  font-weight: 300;
+  font-family: ambleregular sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
 }
@@ -793,14 +810,14 @@ This must be run when you have at least 2 sprites.
   flex-shrink: 0;
 }
 .nav-home-text__name {
-  font-family: Droid Sans sans-serif;
-  font-weight: 400;
+  font-family: amblebold sans-serif;
+  font-weight: normal;
   font-size: 20px;
   color: #343434;
 }
 .nav-home-text__description {
-  font-family: Droid Sans sans-serif;
-  font-weight: 400;
+  font-family: amblebold sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
 }
@@ -884,8 +901,8 @@ This must be run when you have at least 2 sprites.
   transition: transform 0.4s ease-in-out 0s, -webkit-transform 0.4s ease-in-out 0s;
 }
 .top-menu__link {
-  font-family: Droid Sans sans-serif;
-  font-weight: 400;
+  font-family: amblebold sans-serif;
+  font-weight: normal;
   font-size: 16px;
   color: #343434;
   text-transform: uppercase;

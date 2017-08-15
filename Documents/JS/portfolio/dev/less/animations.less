@@ -1,0 +1,30 @@
+@keyframes halfflip {
+    from {transform: rotateY(90deg);}
+    to {transform: rotateY(0deg);}
+}
+@keyframes flip {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
+@keyframes anim  {
+  0% { 
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  25% { 
+    stroke-dashoffset: 40;
+    opacity: .8;
+  }
+  50% { 
+    stroke-dashoffset: 80;
+    opacity: .6;
+  }
+  75% { 
+    stroke-dashoffset: 120;
+    opacity: .8;
+  }
+  100% { 
+    stroke-dashoffset: 140;
+    opacity: 1;
+  }
+}

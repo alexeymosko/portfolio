@@ -27,16 +27,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		})
 });
 app.run(
-    ['$rootScope', '$timeout',
-        function($rootScope, $timeout) {
-            $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-                $rootScope.preloader = true;
-            })
-            $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-                $timeout(function(){
+    ['$rootScope', '$timeout', '$transitions',
+        function($rootScope, $timeout, $transitions) {
+        	$transitions.onStart({ }, function(trans) {
+        		$rootScope.preloader = true; 
+				trans.promise.finally(function() {
+					$timeout(function(){
                 	$rootScope.preloader = false;
                 }, 1200)
-            })
+				});
+  			});
         }
     ])
 }());

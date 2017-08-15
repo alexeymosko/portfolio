@@ -41,11 +41,11 @@ gulp.task('public-watch', function(){
 });	
 
 gulp.task('default', function(){
-	runSequence("dev-clean", "dev-index", "dev-angular-html", "dev-images", "dev-watch");
+	runSequence("dev-clean", "dev-index", "dev-angular-html", "dev-images", "dev-watch", "dev-fonts");
 });
 
 gulp.task('build', function(){
-	runSequence("public-clean", "public-index", "public-angular-html", "public-images", "public-watch");
+	runSequence("public-clean", "public-index", "public-angular-html", "public-images", "public-watch", "public-fonts");
 });
 
 
