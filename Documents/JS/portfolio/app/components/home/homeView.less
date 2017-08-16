@@ -1,4 +1,6 @@
 @import "mixins.less";
+@import "animations.less";
+
 .homepage {
 	display: flex;
 	justify-content: center;
@@ -7,10 +9,43 @@
 	width: 700px;
 	margin: 0 auto;
 }
-.homepage-logo-wrapper {
+.homepage-logo {
 	display: flex;
-	justify-content: center;
+	justify-content: center; 
+	align-items: center;
 }
+
+.homepage-logo-pic {
+    max-width: 120px;
+    height: 100px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.homepage-logo-pic--flip {
+	transform: rotateY(90deg); 
+	animation: halfflip 1s ease-in-out 1s forwards;
+} 
+
+.homepage-logo__circle {
+  stroke: #858585;
+  stroke-width: 0;
+  fill: none;
+  stroke-dasharray: 70;
+  stroke-dashoffset: 0;
+}
+.homepage-logo-text {
+  flex-shrink: 0;
+}
+
+.homepage-logo-text__name {
+	.titlefont;
+}
+
+.homepage-logo-text__description  {
+	.titlefont(16px);
+}
+
+
 
 .homepage-intro {
 	padding: 0px 50px;
@@ -39,6 +74,16 @@
 @media(max-width: 700px) {
 	.homepage-intro__text {
 		text-align: center;
+	}
+}
+
+@media(max-width: 500px) {
+	.homepage-logo {
+		flex-direction: column;
+	}
+	.homepage-logo-text {
+  		text-align: center;
+  		margin-top: 10px;
 	}
 }
 

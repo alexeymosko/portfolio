@@ -10,7 +10,7 @@
   				description: "This is the current portfolio website written on Angular JS.",
           ref: "https://portfolio-8e960.firebaseapp.com/#!/"
   			}, {
-  				pic: "./images/typewriter.jpg",
+  				pic: "./images/typewriter.jpg", 
   				headline: "Typewriter",
   				description: "Typewriter is a program able to show the desired input dynamically imitating typos. Written on native JS.",
           ref: "https://jsfiddle.net/alexeymosko/whta9m3x/"

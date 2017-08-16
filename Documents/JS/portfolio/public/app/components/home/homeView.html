@@ -1,6 +1,20 @@
 <div class = "homepage" ng-controller = "homeController as home">
-	<div class = "homepage-logo-wrapper">
-		<logo></logo>
+	<div class = "homepage-logo">
+			<svg class = "homepage-logo-pic" ng-class = "{'homepage-logo-pic--flip':home.logoFlip}">
+		  		<defs>
+			  	<clipPath id = "clipCircle">
+			    	<use xlink:href="#circle" />
+			  	</clipPath>
+		  		</defs>
+			 	 <circle class = "homepage-logo__circle" id = "circle" r = "45" cx = "50" cy = "50">
+			   	</circle>
+		  		<image class = "homepage-logo__img" xlink:href="images/home.png" clip-path="url(#clipCircle)">
+		  		</image>
+			</svg>
+			<div class = "homepage-logo-text">
+					<div class = "homepage-logo-text__name">Alexey Mosko</div>
+					<div class = "homepage-logo-text__description">Front-end developer</div>
+			</div>
 	</div>
 	<div class = "homepage-line" ng-class = "{'homepage-line--visible':home.showLine}">
 	</div>

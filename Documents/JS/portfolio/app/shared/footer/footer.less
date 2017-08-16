@@ -1,4 +1,5 @@
 @import "_sprite.less";
+@import "mixins.less";
 .footer {
 	background-color: #fff;
 	margin-top: 100px;
@@ -27,4 +28,9 @@
 	&--github {
 	    .sprite(@github-s)
 	  }
+}
+
+
+.footer-text {
+	.titlefont(14px);
 }

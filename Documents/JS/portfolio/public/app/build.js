@@ -49,7 +49,7 @@ $templateCache.put('components/projects/projectsTemplate.html','<div class = "co
 $templateCache.put('components/skills/skillsTemplate.html','<div class = "content-container">\n\t<div class = "skills-list" viewport = "window" >\n\t\t\t<div class = "skills-item"  viewport-enter="item.inViewport = true" viewport-leave= "item.inViewport = false"\nng-repeat="item in skillsCtrl.items track by $index">\n\t\t\t\t<div class= "skills-item__img-wrapper" ng-class = "{\'skills-item__img-wrapper--start\': item.inViewport === true}">\n\t\t\t\t<img class = "skills-item__img"  ng-src = "{{item.image}}" >\n\t\t\t\t</div>\n\t\t\t\t<h2 class = "skills-item__headline"><span>{{item.headline}}</span></h2>\n\t\t\t\t<div class = "skills-item__description" ng-bind-html = "item.description"></div>\n\t\t\t</div>\n\t\t\t\n\t</div>\n</div>');
 $templateCache.put('shared/footer/footerTemplate.html','<footer class = "footer">\n\t<div class = "footer-container">\n\t\t<div class = "footer-icons">\n\t\t\t<a class = "footer-icons__link footer-icons__link--email" href= "mailto: alexeymosko@gmail.com" alt  = "Email icon" target = "blank"></a>\n\t\t\t<a class = "footer-icons__link footer-icons__link--facebook" href= "https://www.facebook.com/alexey.mosko" alt  = "Facebook icon" target= "blank"></a>\n\t\t\t<a class = "footer-icons__link footer-icons__link--github" href= "https://github.com/alexeymosko" alt  = "Github icon" target = "blank"></a>\n\t\t</div>\n\t\t<div class = "footer-text"><span>Alexey Mosko </span><span>{{footerCtrl.year}}</span></div>\n\t</div>\n</footer>');
 $templateCache.put('shared/loader/loaderTemplate.html','<div class = "loader-overlay">\n\t<div class="loader">\n\t\t\t  <div class="rect"></div>\n\t\t\t  <div class="rect"></div>\n\t\t\t  <div class="rect"></div>\n\t\t\t  <div class="rect"></div> \n\t</div>\n</div>');
-$templateCache.put('shared/logo/logoTemplate.html','<div class = "nav-home" ui-sref="home">\n\t\t<!--<img class = "nav-home__img" src="images/home.png" alt = "Alexey Mosko"> -->\n\t<svg class = "logo">\n\t  \t<defs>\n\t\t  \t<clipPath id = "clipCircle">\n\t\t    \t<use xlink:href="#circle" />\n\t\t  \t</clipPath>\n\t  \t</defs>\n\t \t <circle class = "logo__circle" id = "circle" r = "45" cx = "50" cy = "50">\n\t   \t</circle>\n  \t\t<image class = "logo__img" xlink:href="images/home.png" clip-path="url(#clipCircle)">\n  \t\t</image>\n\t</svg>\n\t<div class = "nav-home-text">\n\t\t\t<div class = "nav-home-text__name">Alexey Mosko</div>\n\t\t\t<div class = "nav-home-text__description">Front-end developer</div>\n\t</div>\n</div>');
+$templateCache.put('shared/logo/logoTemplate.html','<div class = "nav-home" ui-sref="home">\n\t\t<!--<img class = "nav-home__img" src="images/home.png" alt = "Alexey Mosko"> -->\n\t<svg class = "logo">\n\t  \t<defs>\n\t\t  \t<clipPath id = "clipCircle">\n\t\t    \t<use xlink:href="#circle" />\n\t\t  \t</clipPath>\n\t  \t</defs>\n\t \t <circle class = "logo__circle" id = "circle" r = "45" cx = "50" cy = "50">\n\t   \t</circle>\n  \t\t<image class = "logo__img" xlink:href="images/home.png" clip-path="url(#clipCircle)">\n  \t\t</image>\n\t</svg>\n\t<div class = "nav-home-text">\n\t\t\t<div class = "nav-home-text__name">Alexey Mosko</div>\n\t\t\t<div class = "nav-home-text__description">Front-end developer</div>\n\t</div>\n</div> ');
 $templateCache.put('shared/navbar/navbarTemplate.html','<nav class = "nav" ng-class = "{\'nav--home\':isActive(\'/\')}">\n\t<logo class = "logo" ng-hide = "isActive(\'/\')"></logo>\n\t<ul class = "top-menu">\n\t\t<li class = "top-menu__item"><a class = "top-menu__link" ui-sref="home" alt="">Home</a></li>\n\t\t<li class = "top-menu__item"><a class = "top-menu__link" ui-sref="about" alt="">About</a></li>\n\t\t<li class = "top-menu__item"><a class = "top-menu__link" ui-sref="skills" alt="">Skills</a></li>\n\t\t<li class = "top-menu__item"><a class = "top-menu__link" ui-sref="projects" alt="">Projects</a></li>\n\t\t<li class = "top-menu__item"><a class = "top-menu__link" ui-sref="contact" alt="">Contact</a></li>\n\t</div>\n</nav>');
 $templateCache.put('shared/typewriter/typewriterTemplate.html','<div class = "tw-wrapper">\n\t<h1 class = "tw-title"></h1>\n</div>\n');}]);
 }());
@@ -195,7 +195,7 @@ var app = angular.module('portfolio');
   				description: "This is the current portfolio website written on Angular JS.",
           ref: "https://portfolio-8e960.firebaseapp.com/#!/"
   			}, {
-  				pic: "./images/typewriter.jpg",
+  				pic: "./images/typewriter.jpg", 
   				headline: "Typewriter",
   				description: "Typewriter is a program able to show the desired input dynamically imitating typos. Written on native JS.",
           ref: "https://jsfiddle.net/alexeymosko/whta9m3x/"
@@ -233,9 +233,11 @@ var app = angular.module('portfolio');
 var app = angular.module('portfolio');
  app.controller('homeController', ['$timeout', function($timeout){
  	this.showLine = false;
+ 	this.logoFlip = false;
  	var self = this;
  	$timeout(function(){
  		self.showLine = true;
+ 		self.logoFlip = true;
  	}, 1000);
  }]);
 /*var line = document.getElementsByClassName("homepage-line")[0];
