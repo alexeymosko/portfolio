@@ -1,16 +1,11 @@
-<div class = "nav-home" ui-sref="home">
-		<!--<img class = "nav-home__img" src="images/home.png" alt = "Alexey Mosko"> -->
-	<svg class = "logo">
-	  	<defs>
-		  	<clipPath id = "clipCircle">
-		    	<use xlink:href="#circle" />
-		  	</clipPath>
-	  	</defs>
-	 	 <circle class = "logo__circle" id = "circle" r = "45" cx = "50" cy = "50">
-	   	</circle>
-  		<image class = "logo__img" xlink:href="images/home.png" clip-path="url(#clipCircle)">
-  		</image>
-	</svg>
+<div class = "nav-home" ui-sref="home"> 
+	<div class = "nav-home-svgwrapper">
+		<img class = "nav-home__img" src="images/home.png" alt = "Alexey Mosko">
+		<svg width="120px" height="100px" class = "nav-home-logo">
+		 	 <circle class = "nav-home-logo__circle" id = "circle" r = "50" cx = "50" cy = "50">
+		   	</circle>
+		</svg>
+	</div>
 	<div class = "nav-home-text">
 			<div class = "nav-home-text__name">Alexey Mosko</div>
 			<div class = "nav-home-text__description">Front-end developer</div>

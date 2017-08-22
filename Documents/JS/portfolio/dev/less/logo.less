@@ -7,6 +7,15 @@
 	align-items: center;
 }
 
+.nav-home__img {
+  margin-right: 20px;
+}
+
+.nav-home-svgwrapper {
+  position: relative;
+}
+
+
 .nav-home-text {
   flex-shrink: 0;
 }
@@ -20,14 +29,17 @@
 }
 
 
-.logo {
+.nav-home-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     max-width: 120px;
     height: 100px;
     cursor: pointer;
     flex-shrink: 0;
 }
 
-.logo__circle {
+.nav-home-logo__circle {
   stroke: #858585;
   stroke-width: 0;
   fill: none;
@@ -35,7 +47,7 @@
   stroke-dashoffset: 0;
 }
 
-.logo:hover .logo__circle {
+.nav-home-logo:hover .nav-home-logo__circle {
 	stroke-width: 2;
 	animation: anim 5s linear 0s infinite;
 }

@@ -1,12 +1,12 @@
 @import "mixins.less";
 .tw-wrapper {
-	width: 180px;
+	width: 200px;
 	min-height: 35px;
 	max-width: 50%;
 	background-color: #DCDCDC;
 	display: flex;
 	flex-direction: column;
-	justify-content: center
+	justify-content: center;
 }
 
 .tw-title {
@@ -15,4 +15,13 @@
 	margin-left: 20px;
 	-webkit-margin-before: 0px;
 	-webkit-margin-after: 0px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+@media (max-width: 500px) {
+	.tw-wrapper {
+		margin-top: -50px;
+		//margin-bottom: -20px;
+	}	
 }

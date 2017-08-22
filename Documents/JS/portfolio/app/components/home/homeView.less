@@ -9,6 +9,9 @@
 	width: 700px;
 	margin: 0 auto;
 }
+.homepage-logo-svgwrapper {
+	position: relative;
+}
 .homepage-logo {
 	display: flex;
 	justify-content: center; 
@@ -16,10 +19,12 @@
 }
 
 .homepage-logo-pic {
+	display: inline-block;
     max-width: 120px;
     height: 100px;
     cursor: pointer;
     flex-shrink: 0;
+    margin-right: 20px;
 }
 .homepage-logo-pic--flip {
 	transform: rotateY(90deg); 
@@ -71,21 +76,30 @@
 	text-align: justify;
 }
 
+
 @media(max-width: 700px) {
 	.homepage-intro__text {
 		text-align: center;
 	}
+
 }
 
 @media(max-width: 500px) {
+
 	.homepage-logo {
+		margin-top: -50px;
 		flex-direction: column;
 	}
 	.homepage-logo-text {
   		text-align: center;
   		margin-top: 10px;
 	}
+	.homepage-logo-pic {
+		margin-right: 0px;
+	}
 }
+
+
 
 
 
